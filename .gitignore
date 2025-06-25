@@ -1,0 +1,72 @@
+.phpactor.json
+/.fleet
+/.nova
+/.phpunit.cache
+/.zed
+/auth.json
+/public/build
+/storage/pail
+
+# Laravel-specific
+/vendor/
+/node_modules/
+/public/storage
+/storage/*.key
+.env
+.env.*
+.phpunit.result.cache
+Homestead.yaml
+Homestead.json
+/.idea
+/.vscode
+/.phpunit.result.cache
+.phpstorm.meta.php
+
+# Laravel SAIL (contenedores)
+docker-compose.override.yml
+
+# Laravel cache and logs
+/storage/app/public
+/storage/app/testing
+/storage/debugbar
+/storage/framework/cache/data
+/storage/framework/sessions
+/storage/framework/testing
+/storage/framework/views
+/storage/logs
+
+# Composer
+composer.lock
+
+# NPM/Yarn lock files (elige uno)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Node-related build files
+/public/hot
+/public/mix-manifest.json
+/public/js/*
+/public/css/*
+/resources/js/*.js
+/resources/css/*.css
+
+# IDEs / Sistemas Operativos
+*.log
+*.bak
+*.swp
+*.swo
+*.tmp
+*.DS_Store
+Thumbs.db
+
+# PHPUnit coverage reports
+coverage/
+
+# Database (si usás SQLite local)
+database/database.sqlite
+database/database.sqlite3
+database/*.sqlite
+
+# Laravel Telescope (si lo usás)
+storage/telescope
