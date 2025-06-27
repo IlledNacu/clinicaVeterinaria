@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,4 +14,4 @@ Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->na
 // La autenticación de middleware lo que hace es que no se puede acceder a la ruta a menos que se esté logueado, y si te logueás te redirige automáticamente a donde querías entrar
 
 // Rutas para el administrador - usuarios
-Route::get('/admin/usuarios', [App\Http\Controllers\Usuario::class, 'index'])->name('admin.usuarios.index')->middleware('auth');
+Route::get('/admin/usuarios', [App\Http\Controllers\UserController::class, 'index'])->name('admin.usuarios.index')->middleware('auth');
