@@ -11,7 +11,18 @@
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-        <p>Acá va la lista de usuarios</p>
+        <table>
+          <tr>
+            <td>Nombre</td>
+            <td>Email</td>
+          </tr>
+        @foreach($usuarios as $usuario)
+          <tr>
+            <td>{{$usuario->name}}</td>
+            <td>{{$usuario->email}}</td>
+          </tr>
+        @endforeach()
+        </table>
       </div><!-- /.container-fluid -->
     </div>
   <!-- /.content -->
