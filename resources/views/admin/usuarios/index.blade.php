@@ -3,7 +3,10 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <h1>Usuarios</h1>
+        <div class="d-flex justify-content-between">
+          <h1>Usuarios</h1>
+          <a href="{{url('admin/usuarios/create')}}" class="btn btn-outline-primary"><i class="bi bi-plus-circle-fill"></i></a>
+        </div>
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->

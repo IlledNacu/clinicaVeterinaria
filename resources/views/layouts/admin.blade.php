@@ -82,12 +82,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="{{url('admin/usuarios/create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Creación de usuarios</p>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a href="{{url('admin/usuarios')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
