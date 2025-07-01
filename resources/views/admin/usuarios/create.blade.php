@@ -1,6 +1,38 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="row">
-        <h1>Creación de un nuevo usuario</h1>
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between">
+            <h1>Creación de un nuevo usuario</h1>
+        </div>
     </div>
+</div>
+<div class="content">
+    <div class="container-fluid">
+        <form action="" method="POST">
+            @csrf <!-- campo token -->
+            <div class="mb-3 form-group">
+                <label for="name" class="form-label">Nombre</label><b> *</b>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3 form-group">
+                <label for="email" class="form-label">Email</label><b> *</b>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3 form-group">
+                <label for="password" class="form-label">Contraseña</label><b> *</b>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="mb-3 form-group">
+                <label for="password_verify" class="form-label">Repetir contraseña</label><b> *</b>
+                <input type="password" class="form-control" id="password_verify" name="password_verify" required>
+            </div>
+            <div class="mb-3 form-group">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="{{url('admin/usuarios')}}" class="btn btn-secondary">Cancelar</a>
+            </div>
+            
+        </form>
+    </div>
+</div>
 @endsection
