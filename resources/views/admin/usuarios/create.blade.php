@@ -9,7 +9,7 @@
 </div>
 <div class="content">
     <div class="container-fluid">
-        <form action="" method="POST">
+        <form action="{{url('/admin/usuarios/create')}}" method="POST">
             @csrf <!-- campo token -->
             <div class="mb-3 form-group">
                 <label for="name" class="form-label">Nombre</label><b> *</b>
@@ -25,7 +25,7 @@
             </div>
             <div class="mb-3 form-group">
                 <label for="password_verify" class="form-label">Repetir contraseña</label><b> *</b>
-                <input type="password" class="form-control" id="password_verify" name="password_verify" required>
+                <input type="password" class="form-control" id="password_verify" name="password_confirmation" required>
             </div>
             <div class="mb-3 form-group">
                 <button type="submit" class="btn btn-primary">Guardar</button>
