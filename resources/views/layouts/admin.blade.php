@@ -18,6 +18,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -111,6 +114,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
     <!-- /.sidebar -->
   </aside>
+
+  <!-- Alerta genérica ya en la plantilla porque podría devolver distintas alertas según la página específica -->
+  @if(($message = Session::get('mensaje')) && ($icon = Session::get('icono')))
+    <script>
+      Swal.fire({
+        position: "top-end",
+        icon: "{{$icon}}",
+        title: "{{$message}}",
+        showConfirmButton: false,
+        timer: 4500
+      });
+    </script>
+  @endif()
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

@@ -34,6 +34,7 @@ class UserController extends Controller
         $usuario->save();
 
         return redirect()->route('admin.usuarios.index')
-            ->with('mensaje', 'Se registró el usuario correctamente');
+            ->with('mensaje', 'Se registró el usuario correctamente')
+            ->with('icono', 'success');
     }
 }

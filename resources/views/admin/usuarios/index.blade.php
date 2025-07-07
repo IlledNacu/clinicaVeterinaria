@@ -14,9 +14,6 @@
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-        @if($message = Session::get('mensaje'))
-          <div class="alert alert-success">{{$message}}</div>
-        @endif()
         <table class="table table-striped table-bordered table-hover">
           <thead>
             <tr>
