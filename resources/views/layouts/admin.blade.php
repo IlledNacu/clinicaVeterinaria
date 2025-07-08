@@ -19,8 +19,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
+  <!-- jQuery -->
+  <script src="{{url('plugins/jquery/jquery.min.js')}}"></script>
+
   <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Datatables -->
+  <link rel="stylesheet" href="{{url('/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{url('/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{url('/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -156,12 +164,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </div>
 <!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
-
-<!-- jQuery -->
-<script src="{{url('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{url('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+<!-- Datatables -->
+<script src="{{url('plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{url('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{url('plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{url('plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{url('plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+<script src="{{url('plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{url('plugins/jszip/jszip.min.js')}}"></script>
+<script src="{{url('plugins/pdfmake.min.js')}}"></script>
+<script src="{{url('plugins/vfs_fonts.js')}}"></script>
+<script src="{{url('plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
+<script src="{{url('plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+<script src="{{url('plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+
 <!-- AdminLTE App -->
 <script src="{{url('dist/js/adminlte.min.js')}}"></script>
 </body>
