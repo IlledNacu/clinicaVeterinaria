@@ -30,10 +30,11 @@
               <th scope="row">{{$contador++}}</th>
               <td>{{$usuario->name}}</td>
               <td>{{$usuario->email}}</td>
-              <td>
+              <td style="text-align: center;">
                 <div class="btn-group" role="group">
-                  <button type="button" class="btn btn-outline-primary"><i class="bi bi-pencil-fill"></i></button>
-                  <button type="button" class="btn btn-outline-primary"><i class="bi bi-trash3-fill"></i></button>
+                  <button type="button" class="btn btn-outline-info btn-sm"><i class="bi bi-eye-fill"></i></button>
+                  <button type="button" class="btn btn-outline-success btn-sm"><i class="bi bi-pencil-fill"></i></button>
+                  <button type="button" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash3-fill"></i></button>
                 </div>
               </td>
             </tr>
