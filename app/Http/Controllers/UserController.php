@@ -37,4 +37,9 @@ class UserController extends Controller
             ->with('mensaje', 'Se registró el usuario correctamente')
             ->with('icono', 'success');
     }
+
+    public function show($id){
+        $usuario = User::find($id);
+        return view('admin.usuarios.show', compact('usuario'));
+    }
 }
