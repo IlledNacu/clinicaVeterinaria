@@ -33,7 +33,7 @@
               <td style="text-align: center;">
                 <div class="btn-group" role="group">
                   <a href="{{url('admin/usuarios/'.$usuario->id)}}" type="button" class="btn btn-outline-info btn-sm"><i class="bi bi-eye-fill"></i></a>
-                  <button type="button" class="btn btn-outline-success btn-sm"><i class="bi bi-pencil-fill"></i></button>
+                  <a href="{{url('admin/usuarios/'.$usuario->id.'/edit')}}" type="button" class="btn btn-outline-success btn-sm"><i class="bi bi-pencil-fill"></i></a>
                   <button type="button" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash3-fill"></i></button>
                 </div>
               </td>

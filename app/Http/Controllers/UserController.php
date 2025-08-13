@@ -42,4 +42,32 @@ class UserController extends Controller
         $usuario = User::findOrFail($id); //el OrFail hace que se muestre un error 404 si no existe ese ID
         return view('admin.usuarios.show', compact('usuario'));
     }
+
+    public function edit($id){
+        $usuario = User::findOrFail($id);
+        return view('admin.usuarios.edit', compact('usuario'));
+    }
+
+    public function update(Request $request, $id){
+        $usuario = User::find($id); //Acá no es necesario OrFail porque ya va a haber sido filtrado en edit
+        //Este find se hace antes del validate en este caso solo porque lo necesitamos en el validate
+        $request->validate([
+            'name'=>'required|max:250',
+            'email'=>'required|max:250|unique:users,email'.$usuario->id,
+            'password'=>'nullable|max:250|confirmed',
+        ]);
+        if($request->filled('name')){
+            $usuario->name = $request->name;
+        }
+        if($request->filled('email')){
+            $usuario->email = $request->email;
+        }
+        if($request->filled('password')){
+            $usuario->password = Hash::make($request['password']);
+        }
+        $usuario->save();
+        return redirect()->route('admin.usuarios.index')
+            ->with('mensaje', 'Se actualizó el usuario correctamente')
+            ->with('icono', 'success');
+    }
 }
