@@ -39,7 +39,7 @@ class UserController extends Controller
     }
 
     public function show($id){
-        $usuario = User::find($id);
+        $usuario = User::findOrFail($id); //el OrFail hace que se muestre un error 404 si no existe ese ID
         return view('admin.usuarios.show', compact('usuario'));
     }
 }
