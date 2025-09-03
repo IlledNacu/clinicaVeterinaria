@@ -70,4 +70,9 @@ class UserController extends Controller
             ->with('mensaje', 'Se actualizó el usuario correctamente')
             ->with('icono', 'success');
     }
+
+    public function confirmDelete($id){
+        $usuario = User::findOrFail($id);
+        return view('admin.usuarios.delete', compact('usuario'));
+    }
 }
