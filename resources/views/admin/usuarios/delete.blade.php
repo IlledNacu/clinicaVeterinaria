@@ -10,8 +10,9 @@
 <div class="content">
     <div class="container-fluid">
         <h3>¿Está seguro de eliminar a este usuario?</h3>
-        <form action="{{url('/admin/usuarios/delete')}}" method="POST">
+        <form action="{{url('/admin/usuarios', $usuario->id)}}" method="POST">
             @csrf <!-- campo token -->
+            @method('DELETE')
             <div class="mb-3 form-group">
                 <label for="name" class="form-label">Nombre</label>
                 <input type="text" value="{{$usuario->name}}" class="form-control" id="name" name="name" disabled>
