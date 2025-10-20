@@ -13,7 +13,8 @@ class SecretariaController extends Controller
      */
     public function index()
     {
-        //
+        $secretarias = Secretaria::with('user')->get();
+        return view('admin.secretarias.index', compact('secretarias'));
     }
 
     /**

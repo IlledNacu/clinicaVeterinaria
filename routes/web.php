@@ -29,3 +29,11 @@ Route::put('/admin/usuarios/{id}', [App\Http\Controllers\UserController::class, 
 Route::get('/admin/usuarios/{id}/confirm-delete', [App\Http\Controllers\UserController::class, 'confirmDelete'])->name('admin.usuarios.confirm-delete')->middleware('auth');
 
 Route::delete('/admin/usuarios/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('admin.usuarios.destroy')->middleware('auth');
+
+// Rutas para el administrador - secretarias
+
+Route::get('/admin/secretarias', [App\Http\Controllers\SecretariaController::class, 'index'])->name('admin.secretarias.index')->middleware('auth');
+
+Route::get('/admin/secretarias/create', [App\Http\Controllers\SecretariaController::class, 'create'])->name('admin.secretarias.create')->middleware('auth');
+
+Route::post('/admin/secretarias/create', [App\Http\Controllers\SecretariaController::class, 'store'])->name('admin.secretarias.store')->middleware('auth');
