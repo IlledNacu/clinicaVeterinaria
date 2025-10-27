@@ -9,7 +9,7 @@
 </div>
 <div class="content">
     <div class="container-fluid">
-        <form action="{{url('/admin/usuarios/create')}}" method="POST">
+        <form action="{{url('/admin/secretarias/create')}}" method="POST">
             @csrf <!-- campo token -->
             <div class="mb-3 form-group">
                 <label for="nombre" class="form-label">Nombre</label><b> *</b>
@@ -69,7 +69,7 @@
             </div>
             <div class="mb-3 form-group">
                 <button type="submit" class="btn btn-primary">Guardar</button>
-                <a href="{{url('admin/usuarios')}}" class="btn btn-secondary">Cancelar</a>
+                <a href="{{url('admin/secretarias')}}" class="btn btn-secondary">Cancelar</a>
             </div>
             
         </form>
