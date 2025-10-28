@@ -37,7 +37,7 @@
               <td>{{$secretaria->ci}}</td>
               <td>{{$secretaria->fecha_nacimiento}}</td>
               <td>{{$secretaria->direccion}}</td>
-              <td>{{$secretaria->email}}</td>
+              <td>{{$secretaria->user->email}}</td>
               <td style="text-align: center;">
                 <div class="btn-group" role="group">
                   <a href="{{url('admin/secretarias/'.$secretaria->id)}}" type="button" class="btn btn-outline-info btn-sm"><i class="bi bi-eye-fill"></i></a>

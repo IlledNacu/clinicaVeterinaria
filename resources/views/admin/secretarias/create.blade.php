@@ -3,7 +3,7 @@
 <div class="content-header">
     <div class="container-fluid">
         <div class="d-flex justify-content-between">
-            <h1>Creación de un/a nuevo/a secretario/a </h1>
+            <h1>Creación de un/a nuevo/a secretario/a</h1>
         </div>
     </div>
 </div>
