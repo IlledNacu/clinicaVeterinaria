@@ -33,3 +33,5 @@ class PacienteFactory extends Factory
         ];
     }
 }
+
+/* Para actualizar las migraciones y seeds: php artisan migrate:fresh --seed */

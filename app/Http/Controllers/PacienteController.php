@@ -30,23 +30,61 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $datos = request()->all();
+        // return response()->json($datos);
+
+        $request->validate([
+            'nombre' => 'required',
+            'apellido' => 'required',
+            'ci' => 'required|unique:pacientes',
+            'nro_seguro' => 'required|unique:pacientes',
+            'fecha_nacimiento' => 'required',
+            'genero' => 'required',
+            'telefono' => 'required',
+            'correo' => 'required|max:250|unique:pacientes',
+            'direccion' => 'required',
+            'grupo_sanguineo' => 'required',
+            'alergias' => 'required',
+            'contacto_emergencia' => 'required'
+        ]);
+
+        $paciente = new Paciente();
+        $paciente->nombre = $request->nombre;
+        $paciente->apellido = $request->apellido;
+        $paciente->ci = $request->ci;
+        $paciente->nro_seguro = $request->nro_seguro;
+        $paciente->fecha_nacimiento = $request->fecha_nacimiento;
+        $paciente->genero = $request->genero;
+        $paciente->telefono = $request->telefono;
+        $paciente->correo = $request->correo;
+        $paciente->direccion = $request->direccion;
+        $paciente->grupo_sanguineo = $request->grupo_sanguineo;
+        $paciente->alergias = $request->alergias;
+        $paciente->contacto_emergencia = $request->contacto_emergencia;
+        $paciente->observaciones = $request->observaciones;
+        $paciente->save();
+
+        return redirect()->route('admin.pacientes.index')
+            ->with('mensaje','Se registró el paciente correctamente.')
+            ->with('icono','success');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Paciente $paciente)
+    public function show($id)
     {
-        //
+        $paciente = Paciente::findOrFail($id);
+        return view('admin.pacientes.show', compact('paciente'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Paciente $paciente)
+    public function edit($id)
     {
-        //
+        $paciente = Paciente::findOrFail($id);
+        return view('admin.pacientes.edit', compact('paciente'));
     }
 
     /**

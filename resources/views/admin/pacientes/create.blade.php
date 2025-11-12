@@ -55,7 +55,7 @@
             </div>
             <div class="mb-3 form-group">
                 <label for="telefono" class="form-label">Teléfono</label><b> *</b>
-                <input type="number" value="{{old('telefono')}}" class="form-control" id="telefono" name="telefono" required>
+                <input type="text" value="{{old('telefono')}}" class="form-control" id="telefono" name="telefono" required>
                 @error('telefono')
                 <small style="color:red">{{$message}}</small>
                 @enderror
@@ -94,8 +94,15 @@
             </div>
             <div class="mb-3 form-group">
                 <label for="contacto_emergencia" class="form-label">Contacto de emergencia</label><b> *</b>
-                <input type="number" value="{{old('contacto_emergencia')}}" class="form-control" id="contacto_emergencia" name="contacto_emergencia" required>
+                <input type="text" value="{{old('contacto_emergencia')}}" class="form-control" id="contacto_emergencia" name="contacto_emergencia" required>
                 @error('contacto_emergencia')
+                <small style="color:red">{{$message}}</small>
+                @enderror
+            </div>
+            <div class="mb-3 form-group">
+                <label for="observaciones" class="form-label">Observaciones</label>
+                <input type="text" value="{{old('observaciones')}}" class="form-control" id="observaciones" name="observaciones">
+                @error('observaciones')
                 <small style="color:red">{{$message}}</small>
                 @enderror
             </div>

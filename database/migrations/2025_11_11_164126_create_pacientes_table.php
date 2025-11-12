@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('grupo_sanguineo', 20);
             $table->string('alergias', 255);
             $table->string('contacto_emergencia', 255);
-            $table->string('observaciones', 255);
+            $table->string('observaciones', 255)->nullable();
             $table->timestamps();
         });
     }
