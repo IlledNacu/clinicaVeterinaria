@@ -43,8 +43,8 @@
         <!-- small box -->
         <div class="small-box bg-warning">
             <div class="inner">
-            <h3>44</h3>
-            <p>User Registrations</p>
+            <h3>{{$total_pacientes}}</h3>
+            <p>Pacientes</p>
             </div>
             <div class="icon">
             <i class="ion ion-person-add"></i>
