@@ -4,7 +4,7 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="d-flex justify-content-between">
-          <h1>consultorios</h1>
+          <h1>Consultorios registrados</h1>
           <a href="{{url('admin/consultorios/create')}}" class="btn btn-outline-primary"><i class="bi bi-plus-circle-fill"></i></a>
         </div>
       </div><!-- /.container-fluid -->
@@ -18,14 +18,12 @@
           <thead>
             <tr>
               <th scope="col"></th>
-              <th scope="col">Nombre y apellido</th>
-              <th scope="col">CI</th>
-              <th scope="col">Nro. de seguro</th>
-              <th scope="col">Fecha de nacimiento</th>
-              <th scope="col">Género</th>
+              <th scope="col">Consultorio</th>
+              <th scope="col">Ubicación</th>
+              <th scope="col">Capacidad</th>
               <th scope="col">Teléfono</th>
-              <th scope="col">Email</th>
-              <th scope="col">Dirección</th>
+              <th scope="col">Especialidad</th>
+              <th scope="col">Estado</th>
               <th scope="col">Acciones</th>
             </tr>
           </thead>
@@ -34,14 +32,12 @@
           @foreach($consultorios as $consultorio)
             <tr>
               <th scope="row">{{$contador++}}</th>
-              <td>{{$consultorio->nombre}} {{$consultorio->apellido}}</td>
-              <td>{{$consultorio->ci}}</td>
-              <td>{{$consultorio->nro_seguro}}</td>
-              <td>{{$consultorio->fecha_nacimiento}}</td>
-              <td>{{$consultorio->genero}}</td>
+              <td>{{$consultorio->nombre}}</td>
+              <td>{{$consultorio->ubicacion}}</td>
+              <td>{{$consultorio->capacidad}}</td>
               <td>{{$consultorio->telefono}}</td>
-              <td>{{$consultorio->correo}}</td>
-              <td>{{$consultorio->direccion}}</td>
+              <td>{{$consultorio->especialidad}}</td>
+              <td>{{$consultorio->estado}}</td>
               <td style="text-align: center;">
                 <div class="btn-group" role="group">
                   <a href="{{url('admin/consultorios/'.$consultorio->id)}}" type="button" class="btn btn-outline-info btn-sm"><i class="bi bi-eye-fill"></i></a>
@@ -59,11 +55,11 @@
               "pageLength": 10,
               "language": {
                 "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ consultorios",
-                "infoFiltered": "(Filtrado de _MAX_ total consultorios",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Consultorios",
+                "infoFiltered": "(Filtrado de _MAX_ total Consultorios",
                 "infoPostFix": "",
                 "thousands": ",",
-                "lengthMenu": "Mostrar _MENU_ consultorios",
+                "lengthMenu": "Mostrar _MENU_ Consultorios",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
                 "search": "Buscador:",
