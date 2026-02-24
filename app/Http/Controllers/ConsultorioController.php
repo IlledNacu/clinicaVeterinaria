@@ -22,7 +22,7 @@ class ConsultorioController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.consultorios.create');
     }
 
     /**
@@ -30,7 +30,19 @@ class ConsultorioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'ubicacion' => 'required',
+            'capacidad' => 'required',
+            'especialidad' => 'required',
+            'estado' => 'required',
+        ]);
+
+        Consultorio::create($request->all()); //Comparar cómo se hace en el controlador de Secretaria, son dos maneras distintas
+
+        return redirect()->route('admin.consultorios.index')
+         ->with('mensaje','Se agregó el consultorio correctamente')
+         ->with('icono','success');
     }
 
     /**
