@@ -108,7 +108,6 @@ class PacienteController extends Controller
             'contacto_emergencia' => 'required'
         ]);
 
-        $paciente = new Paciente();
         $paciente->nombre = $request->nombre;
         $paciente->apellido = $request->apellido;
         $paciente->ci = $request->ci;

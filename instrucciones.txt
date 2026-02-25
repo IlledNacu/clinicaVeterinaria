@@ -1,0 +1,9 @@
+Con MySQL y Apache corriendo en XAMPP
+-------------------------------------
+En un bash: php artisan serve
+En otro bash: npm run dev
+
+También, antes, si hay que migrar nuevas tablas:
+php artisan migrate
+
+Por ahora solo está funcional la parte del administrador: localhost:8000/admin
