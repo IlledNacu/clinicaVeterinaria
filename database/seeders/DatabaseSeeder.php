@@ -21,29 +21,31 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         // Sembradores de datos falsos
-        User::create([
-            'name' => 'Administrador',
-            'email' => 'administrador@clivet.com',
-            'password' => Hash::make('test123'),
-        ]);
+        // User::create([
+        //     'name' => 'Administrador',
+        //     'email' => 'administrador@clivet.com',
+        //     'password' => Hash::make('test123'),
+        // ]);
 
-        User::create([
-            'name' => 'Secretaria',
-            'email' => 'secretaria@clivet.com',
-            'password' => Hash::make('test123'),
-        ]);
+        // User::create([
+        //     'name' => 'Secretaria',
+        //     'email' => 'secretaria@clivet.com',
+        //     'password' => Hash::make('test123'),
+        // ]);
 
-        User::create([
-            'name' => 'Doctora',
-            'email' => 'doctora@clivet.com',
-            'password' => Hash::make('test123'),
-        ]);
+        // User::create([
+        //     'name' => 'Doctora',
+        //     'email' => 'doctora@clivet.com',
+        //     'password' => Hash::make('test123'),
+        // ]);
 
-        User::create([
-            'name' => 'Paciente',
-            'email' => 'paciente@gmail.com',
-            'password' => Hash::make('test123'),
-        ]);
+        // User::create([
+        //     'name' => 'Paciente',
+        //     'email' => 'paciente@gmail.com',
+        //     'password' => Hash::make('test123'),
+        // ]);
+
+        $this->call([PacienteSeeder::class,]);
     }
 }
 

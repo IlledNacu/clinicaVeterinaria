@@ -1,0 +1,87 @@
+## PRIMER MERGE (Hasta clase 17 - Estructura base y creación usuario) - Curso de Laravel de HilariWeb
+
+Estructura base con laravel+bootstrap+ui+adminlte
+-------------------------------------------------
+Contenidos manipulados (el resto son del FW):
+- app/Http/Controllers
+*Admin (Autenticación de logueo en Laravel para acceder a una vista)
+*Controller
+*HomeController
+*UserController
+- app/Http/Controllers/Auth
+*ConfirmPasswordController
+*ForgotPasswordController
+*LoginController
+*RegisterController
+*ResetPasswordController
+*VerificationController
+- app/Models
+*User (Plantillas — Clase 6: Creamos el controlador del usuario para devolver eventualmente la vista de los usuarios para la página de Usuarios, que utiliza como plantilla el layout general del administrador)
+- app/Providers
+*AppServiceProvider
+- config
+- database/factories
+*UserFactory
+- database/migrations
+- database/seeders (Seeders en Laravel, siembran datos falsos en la bbdd para hacer pruebas)
+- public
+- resources/views
+*/admin (Dentro el CRUD)
+*/auth
+*/layouts (Plantillas con Laravel, pseudocomponentización)
+*/layouts/admin: Plantilla base para el resto de las páginas
+*index
+*home
+- routes
+*web
+
+Detalles
+--------
+Función store para create: tiene validaciones de refuerzo para impedir la manipulación de los formulario.
+Función create: redireccionamiento de página y envío de mensajes de alerta al front con Session::get(). Alertas genéricas de SweetAlert en la plantilla para que se puedan adaptar a la página según el mensaje e ícono. Validaciones de laravel con @error y recuperación de los datos validados con value={{old()}}.
+
+## SEGUNDO MERGE (Desde clase 18 hasta 25 - CRUD usuario)
+
+Estructura base con laravel+bootstrap+ui+adminlte
+-------------------------------------------------
+Contenidos manipulados:
+- app/Http/Controllers
+*UserController (CRUD)
+- config (cambiamos el lenguaje de Laravel a español)
+*app
+- resources
+*/lang/es
+*/views/admin/usuarios (CRUD)
+*/views/admin/usuarios/index.blade (Incorporación del datatable de datatables.net y trad al español)
+*/views/layouts/admin.blade (Incorporación del datatable de datatables.net)
+- routes
+*web (Usuario CRUD)
+
+Atender:
+Todavía no funciona el create y se rompe el edit.
+
+## TERCER MERGE (Desde clase 26 hasta 33 - CRUD Secretaria)
+
+Estructura base con laravel+bootstrap+ui+adminlte
+-------------------------------------------------
+Contenidos manipulados:
+- app/Http/Controllers
+*AdminController (Dashboard)
+*SecretariaController (CRUD)
+- app/Models
+*Secretaria (pertenece a User)
+*User (tiene Secretaria)
+- config
+*database (se especifica el engine InnoDB para que funcione la relación entre tablas)
+- resources/views
+*/admin/index (Dashboard)
+*/admin/secretarias (CRUD)
+*/layouts/admin (se agrega a la plantilla el menú lateral correspondiente)
+
+Revisión:
+Se arregó el funcionamiento del CRUD del Usuario.
+
+## CUARTO MERGE (Desde clase 34 hasta 53)
+
+Controller, model, factory, seeders, views correspondientes al CRUD del paciente, consultorio, doctor y horarios.
+Implementación de paciente y consultorio y cómo se vinculan con el controlador, la plantilla del admin y las rutas.
