@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Doctor;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class DoctorController extends Controller
 {
@@ -13,7 +15,8 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        //
+        $doctores = Doctor::with('user')->get();
+        return view('admin.doctores.index', compact('doctores'));
     }
 
     /**
@@ -21,7 +24,7 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.doctores.create');
     }
 
     /**
@@ -29,7 +32,34 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'apellido' => 'required',
+            'telefono' => 'required',
+            'licencia_medica' => 'required',
+            'especialidad' => 'required',
+            'email' => 'required|max:250|unique:users',
+            'password' => 'required|max:250:confirmed',
+        ]);
+
+        $usuario = new User();
+        $usuario->name = $request->nombre;
+        $usuario->email = $request->email;
+        $usuario->password = Hash::make($request['password']);
+        $usuario->save();
+
+        $doctor = new Doctor();
+        $doctor->user_id = $usuario->id;
+        $doctor->nombre = $request->nombre;
+        $doctor->apellido = $request->apellido;
+        $doctor->ci = $request->telefono;
+        $doctor->licencia_medica = $request->licencia_medica;
+        $doctor->especialidad = $request->especialidad;
+        $doctor->save();
+
+        return redirect()->route('admin.doctores.index')
+            ->with('mensaje','Se registró el doctor correctamente')
+            ->with('icono','success');
     }
 
     /**
