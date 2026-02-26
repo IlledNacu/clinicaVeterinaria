@@ -24,7 +24,7 @@ class SecretariaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.secretarias.create');
     }
 
     /**
@@ -35,8 +35,8 @@ class SecretariaController extends Controller
         // $datos = request()->all();
         // return response()->json($datos);
         $request->validate([
-            'nombres' => 'required',
-            'apellidos' => 'required',
+            'nombre' => 'required',
+            'apellido' => 'required',
             'ci' => 'required|unique:secretarias',
             'fecha_nacimiento' => 'required',
             'direccion' => 'required',
@@ -89,8 +89,8 @@ class SecretariaController extends Controller
     {
         $secretaria = Secretaria::find($id);
         $request->validate([
-            'nombres' => 'required',
-            'apellidos' => 'required',
+            'nombre' => 'required',
+            'apellido' => 'required',
             'ci' => 'required|unique:secretarias,ci,' . $secretaria->id,
             'fecha_nacimiento' => 'required',
             'direccion' => 'required',
@@ -118,11 +118,27 @@ class SecretariaController extends Controller
             ->with('icono','success');
     }
 
+    public function confirmDelete($id){
+        $secretaria = Secretaria::with('user')->findOrFail($id);
+        return view('admin.secretarias.delete', compact('secretaria'));
+    }
+
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Secretaria $secretaria)
+    public function destroy($id)
     {
-        //
+        $secretaria = Secretaria::find($id);
+
+        //Eliminamos al usuario asociado
+        $usuario = $secretaria->user;
+        $usuario->delete();
+
+        //Eliminamos a la secretaria
+        $secretaria->delete();
+
+        return redirect()->route('admin.secretarias.index')
+            ->with('mensaje','Se eliminó a la secretaria de la manera correcta')
+            ->with('icono','success');
     }
 }

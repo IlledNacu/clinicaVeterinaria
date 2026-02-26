@@ -44,6 +44,11 @@ Route::get('/admin/secretarias/{id}/edit', [App\Http\Controllers\SecretariaContr
 
 Route::put('/admin/secretarias/{id}', [App\Http\Controllers\SecretariaController::class, 'update'])->name('admin.secretarias.update')->middleware('auth');
 
+// CHEQUEAR CLASES DONDE SE IMPLEMENTA EL DELETE DE LAS SECRETARIAS
+Route::get('/admin/secretarias/{id}/confirm-delete', [App\Http\Controllers\SecretariaController::class, 'confirmDelete'])->name('admin.secretarias.confirm-delete')->middleware('auth');
+
+Route::delete('/admin/secretarias/{id}', [App\Http\Controllers\SecretariaController::class, 'destroy'])->name('admin.secretarias.destroy')->middleware('auth');
+
 // Rutas para el administrador - pacientes
 
 Route::get('/admin/pacientes', [App\Http\Controllers\PacienteController::class, 'index'])->name('admin.pacientes.index')->middleware('auth');

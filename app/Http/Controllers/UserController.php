@@ -53,7 +53,7 @@ class UserController extends Controller
         //Este find se hace antes del validate en este caso solo porque lo necesitamos en el validate
         $request->validate([
             'name'=>'required|max:250',
-            'email'=>'required|max:250|unique:users,email'.$usuario->id,
+            'email'=>'required|max:250|unique:users,email,'.$usuario->id,
             'password'=>'nullable|max:250|confirmed',
         ]);
         if($request->filled('name')){
