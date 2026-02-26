@@ -80,3 +80,8 @@ Contenidos manipulados:
 
 Revisión:
 Se arregó el funcionamiento del CRUD del Usuario.
+
+## CUARTO MERGE (Desde clase 34 hasta 53)
+
+Controller, model, factory, seeders, views correspondientes al CRUD del paciente, consultorio, doctor y horarios.
+Implementación de paciente y consultorio y cómo se vinculan con el controlador, la plantilla del admin y las rutas.
