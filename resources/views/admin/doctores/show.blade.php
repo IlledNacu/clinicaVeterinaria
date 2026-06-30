@@ -3,7 +3,7 @@
 <div class="content-header">
     <div class="container-fluid">
         <div class="d-flex justify-content-between">
-            <h1>Secretaria: {{$secretaria->nombre}} {{$secretaria->apellido}}</h1>
+            <h1>Doctor: {{$doctor->nombre}} {{$doctor->apellido}}</h1>
         </div>
     </div>
 </div>
@@ -11,30 +11,30 @@
     <div class="container-fluid">
             <div class="mb-3 form-group">
                 <label for="nombre" class="form-label">Nombre</label>
-                <p>{{$secretaria->nombre}}</p>
+                <p>{{$doctor->nombre}}</p>
             </div>
             <div class="mb-3 form-group">
                 <label for="apellido" class="form-label">Apellido</label>
-                <p>{{$secretaria->apellido}}</p>
+                <p>{{$doctor->apellido}}</p>
             </div>
             <div class="mb-3 form-group">
-                <label for="ci" class="form-label">CI</label>
-                <p>{{$secretaria->ci}}</p>
+                <label for="telefono" class="form-label">Teléfono</label>
+                <p>{{$doctor->telefono}}</p>
             </div>
             <div class="mb-3 form-group">
-                <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento</label>
-                <p>{{$secretaria->fecha_nacimiento}}</p>
+                <label for="licencia_medica" class="form-label">Licencia médica</label>
+                <p>{{$doctor->licencia_medica}}</p>
             </div>
             <div class="mb-3 form-group">
-                <label for="direccion" class="form-label">Dirección</label>
-                <p>{{$secretaria->direccion}}</p>
+                <label for="especialidad" class="form-label">Especialidad</label>
+                <p>{{$doctor->especialidad}}</p>
             </div>
             <div class="mb-3 form-group">
                 <label for="email" class="form-label">Email</label>
-                <p>{{$secretaria->user->email}}</p>
+                <p>{{$doctor->user->email}}</p>
             </div>
             <div class="mb-3 form-group">
-                <a href="{{url('admin/secretarias')}}" class="btn btn-secondary">Volver</a>
+                <a href="{{url('admin/doctores')}}" class="btn btn-secondary">Volver</a>
             </div>
     </div>
 </div>

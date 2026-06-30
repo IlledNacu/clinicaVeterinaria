@@ -65,9 +65,10 @@ class DoctorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Doctor $doctor)
+    public function show($id)
     {
-        //
+        $doctor = Doctor::findOrFail($id);
+        return view('admin.doctores.show', compact('doctor'));
     }
 
     /**
